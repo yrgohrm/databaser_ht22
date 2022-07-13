@@ -1,2 +1,7 @@
-# databaser_ht22
-Code from coding live at leactures in "Databaser" at Yrgo
+# Lektionsfiler för kursen Databaser
+
+**Do not use any of this code for anything important**
+
+Kod i varierande tillstånd av kompletthet som vi kodar live i samband med lektioner.
+
+Absolut inte något att kopiera och använda till något som helst viktigt syfte!
