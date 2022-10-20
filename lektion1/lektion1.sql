@@ -26,4 +26,20 @@ SELECT fldFirstName FROM tblCustomer;
 ALTER TABLE tblCustomer RENAME apansson;
 
 ALTER TABLE apansson RENAME tblCustomer;
-    
+
+
+
+-- Övning 1
+
+CREATE TABLE tblBook
+(
+    fldId           INT PRIMARY KEY,
+    fldIsbn         CHAR(13),
+    fldTitle        VARCHAR(50),
+    fldAuthor       VARCHAR(50),
+    fldAvailable    BOOLEAN,
+    fldPurchased    DATE
+);
+
+INSERT INTO tblBook VALUES 
+(2, '9781943872367', "Murach's MySQL (3rd Edition)", 'Joel Murach', true, '2020-01-12');
