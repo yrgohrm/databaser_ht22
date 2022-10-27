@@ -28,12 +28,14 @@ public class App {
 
             insert(conn, "foo@bar.com", true, false);
 
-            // we are up and running
             printNewsletter(conn);
             System.out.println();
+
             printMatching(conn, true);
             System.out.println();
+
             printMatching(conn, "bosse", false);
+            System.out.println();
         }
         catch (SQLException ex) {
             log.error("problem with SQL query", ex);
@@ -42,10 +44,17 @@ public class App {
     }
 
     private static void printNewsletter(Connection conn) throws SQLException {
+        // in this case it is OK to use Statement since the query string is
+        // a literal string. However, it would be just as good if we used
+        // PreparedStatement here too and it would not break by mistake
+        // in the future.
+
         final String query = "SELECT id, email, newsletter, spam FROM contacts";
         try (Statement stmt = conn.createStatement()) {
             ResultSet rs = stmt.executeQuery(query);
 
+            // a result set works kind of like an iterator
+            // we have to ask for the next row in the result
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String email = rs.getString("email");
