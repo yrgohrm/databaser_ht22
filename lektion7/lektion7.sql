@@ -63,8 +63,12 @@ CREATE TABLE tblBook
 
 CREATE TABLE tblBookAuthor
 (
-    
-)
+    fldId INT,
+    fldIsbn CHAR(13),
+    PRIMARY KEY (fldId, fldIsbn),
+    FOREIGN KEY (fldId) REFERENCES tblAuthor(fldId),
+    FOREIGN KEY (fldIsbn) REFERENCES tblBook(fldIsbn)
+);
 
 
 
