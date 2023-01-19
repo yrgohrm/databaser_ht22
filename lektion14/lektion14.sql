@@ -144,3 +144,4 @@ FROM orders AS o
     JOIN shippers AS s
     ON o.shipvia = s.shipperId
 ORDER BY orderdate DESC;
+
