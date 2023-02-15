@@ -1,0 +1,54 @@
+
+let company = {
+    _id: ObjectId("abababababababababab"),
+    name: "Acme AB",
+    address: {
+        street: "Storgatan 1",
+        zip: 41745
+    }
+}
+
+let kalle = {
+    name: "Kalle Karlsson",
+    salary: 46555,
+    company: ObjectId("abababababababababab") 
+}
+
+let lisa = {
+    name: "Lisa Larsson",
+    salary: 47555,
+    company: ObjectId("abababababababababab") 
+}
+
+
+
+let company2 = {
+    _id: ObjectId("ffababababababababab"),
+    name: "Acme AB",
+    address: {
+        street: "Storgatan 1",
+        zip: 41745
+    },
+    employees: [
+        { name: "Nisse Nilsson", salary: 45667, lastCheckin: ISODate("2023-....") },
+        { name: "Leyla Larsson", salary: 45667 }
+    ]
+}
+
+let kalle2 = {
+    name: "Kalle Karlsson",
+    salary: 46555,
+    company: {
+        name: "Acme AB",
+        street: "Storgatan 1"
+    } 
+}
+
+let lisa2 = {
+    name: "Lisa Larsson",
+    salary: 47555,
+    company: {
+        name: "Acme AB",
+        street: "Storgatan 1"
+    }
+}

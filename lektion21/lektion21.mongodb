@@ -1,0 +1,24 @@
+// Select the database to use.
+use('moviedb');
+
+// db.movies.findOne({ title: "Jaws"});
+// db.viewers.find();
+
+db.viewers.aggregate([
+    { $match: { name: "Nisse Larsson" } },
+    {
+        $lookup: {
+            from: "movies",
+            localField: "movies.movie",
+            foreignField: "_id",
+            as: "movieData",
+        },
+    },
+    { $project: { name: 1, "movieData.title": 1}}
+])
+
+db.viewers.updateOne(
+    { name: "Nisse Larsson"},
+    { $addToSet: { movies: { movie: ObjectId("573a1396f29313caabce5ba0"), rating: 7 }}}
+)
+
